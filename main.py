@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-import openai
-from openai import Client, chat
+# import openai
+# from openai import Client, chat
 from google.colab import userdata
 import os
-from openai import OpenAI
+# from openai import OpenAI
 from Filtering import get_contexts, onlineSearch, get_youtube_content
 from fastapi import File, UploadFile
 from PyPDF2 import PdfReader
