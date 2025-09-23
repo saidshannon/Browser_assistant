@@ -1,8 +1,8 @@
 from sentence_transformers import SentenceTransformer, util
 from openai import Client
-from google.colab import userdata
+# from google.colab import userdata
 import os
-from openai import OpenAI
+# from openai import OpenAI
 import google.generativeai as genai
 import requests
 from youtube_transcript_api import YouTubeTranscriptApi
@@ -18,7 +18,7 @@ def get_contexts(question:str,contexts:dict):
     #   #     "X-Title": "MyBrowserExtension"         # Optional
     #   # }
     # )
-    API_KEY="AIzaSyA8oRPN777XkvWppZxdZYrJ3YXl-OJ2InA"
+    API_KEY = os.getenv("GOOGLE_API_KEY")
     genai.configure(api_key = API_KEY)
     model = genai.GenerativeModel("gemini-2.5-flash")
     for tag,context in contexts.items():
