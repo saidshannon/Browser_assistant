@@ -1,5 +1,5 @@
-from sentence_transformers import SentenceTransformer, util
-from openai import Client
+# from sentence_transformers import SentenceTransformer, util
+# from openai import Client
 # from google.colab import userdata
 import os
 # from openai import OpenAI
