@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 # import openai
 # from openai import Client, chat
-from google.colab import userdata
+# from google.colab import userdata
 import os
 # from openai import OpenAI
 from Filtering import get_contexts, onlineSearch, get_youtube_content
@@ -91,8 +91,8 @@ async def ask_question(question: str = Form(...),
       # }
     # )
 
-    # API_KEY=userdata.get('GOOGLE_API_KEY')
-    genai.configure(api_key ="AIzaSyA8oRPN777XkvWppZxdZYrJ3YXl-OJ2InA" )
+    API_KEY = os.getenv("GOOGLE_API_KEY")
+    genai.configure(api_key =API_KEY)
     model = genai.GenerativeModel("gemini-2.5-flash")
 
     
